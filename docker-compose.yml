@@ -32,6 +32,8 @@ services:
     container_name: chronograf
     environment:
       INFLUXDB_URL: http://influxdb:8086
+    volumes:
+      - ./chronograf/data:/var/lib/chronograf
     ports:
       - "8888:8888"
     links:
