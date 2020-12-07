@@ -1,0 +1,197 @@
+{
+	"meta": {
+		"chronografVersion": "1.8.8",
+		"sources": {
+			"0": {
+				"name": "http://influxdb:8086",
+				"link": "/chronograf/v1/sources/0"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "3",
+		"cells": [
+			{
+				"i": "889651df-34a3-46a0-87c9-f6ca235f3b49",
+				"x": 0,
+				"y": 0,
+				"w": 12,
+				"h": 8,
+				"name": "% used memory",
+				"queries": [
+					{
+						"query": "SELECT mean(\"used_percent\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "mem",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "% USED",
+									"args": [
+										{
+											"value": "used_percent",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									"6355b469f1ec"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					},
+					{
+						"query": "SELECT mean(\"usage_user\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "cpu",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "% USED",
+									"args": [
+										{
+											"value": "usage_user",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									"6355b469f1ec"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "ecc042c6-3ee9-4300-a694-6d8ca009ec35",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "11c7306a-4b50-45ec-8c97-a8d33087282f",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "5791c652-4bee-40eb-9fd4-fc0132f15071",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/3/cells/889651df-34a3-46a0-87c9-f6ca235f3b49"
+				}
+			}
+		],
+		"templates": [],
+		"name": "CPU/Memory metrics",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/3",
+			"cells": "/chronograf/v1/dashboards/3/cells",
+			"templates": "/chronograf/v1/dashboards/3/templates"
+		}
+	}
+}
