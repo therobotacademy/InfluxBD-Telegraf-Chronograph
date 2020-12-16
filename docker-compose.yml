@@ -5,6 +5,7 @@ services:
   telegraf:
     image: telegraf:1.16
     container_name: telegraf
+    restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock 
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
@@ -20,6 +21,7 @@ services:
   influxdb:
     image: influxdb:1.8
     container_name: influxdb
+    restart: always
     volumes:
       - ./influxdb/data:/var/lib/influxdb
     ports:
@@ -30,6 +32,7 @@ services:
   chronograf:
     image: chronograf:1.8
     container_name: chronograf
+    restart: always
     environment:
       INFLUXDB_URL: http://influxdb:8086
     volumes:
