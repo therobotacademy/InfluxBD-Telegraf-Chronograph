@@ -20,7 +20,7 @@
 				"name": "SWAP Memory",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used\") AS \"USED\" FROM \"telegraf\".\"autogen\".\"swap\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"used\") AS \"USED\" FROM \"telegraf\".\"autogen\".\"swap\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "swap",
@@ -40,9 +40,7 @@
 								}
 							],
 							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
+
 							},
 							"groupBy": {
 								"time": "auto",
@@ -189,7 +187,7 @@
 				"name": "Memory",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used\") AS \"USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"used\") AS \"USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "mem",
@@ -209,9 +207,7 @@
 								}
 							],
 							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
+
 							},
 							"groupBy": {
 								"time": "auto",
@@ -261,7 +257,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"cached\") AS \"CACHED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"cached\") AS \"CACHED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "mem",
@@ -281,9 +277,7 @@
 								}
 							],
 							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
+
 							},
 							"groupBy": {
 								"time": "auto",
@@ -396,7 +390,7 @@
 				"name": "% used (CPU, memory)",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used_percent\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"used_percent\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "mem",
@@ -416,9 +410,7 @@
 								}
 							],
 							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
+
 							},
 							"groupBy": {
 								"time": "auto",
@@ -434,7 +426,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"usage_user\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"usage_user\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > :dashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "cpu",
@@ -454,9 +446,7 @@
 								}
 							],
 							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
+
 							},
 							"groupBy": {
 								"time": "auto",
