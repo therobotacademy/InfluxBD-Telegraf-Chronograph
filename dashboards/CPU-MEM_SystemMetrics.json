@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": "3",
+		"id": "4",
 		"cells": [
 			{
-				"i": "889651df-34a3-46a0-87c9-f6ca235f3b49",
+				"i": "ec202f55-e468-46d2-9695-f8fd9ddf7a8d",
 				"x": 0,
 				"y": 0,
 				"w": 12,
@@ -20,7 +20,7 @@
 				"name": "% used memory",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used_percent\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"used_percent\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "mem",
@@ -39,16 +39,12 @@
 									]
 								}
 							],
-							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
-							},
+							"tags": {},
 							"groupBy": {
 								"time": "auto",
 								"tags": []
 							},
-							"areTagsAccepted": true,
+							"areTagsAccepted": false,
 							"fill": "null",
 							"rawText": null,
 							"range": null,
@@ -58,7 +54,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"usage_user\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"usage_user\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "cpu",
@@ -77,16 +73,12 @@
 									]
 								}
 							],
-							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
-							},
+							"tags": {},
 							"groupBy": {
 								"time": "auto",
 								"tags": []
 							},
-							"areTagsAccepted": true,
+							"areTagsAccepted": false,
 							"fill": "null",
 							"rawText": null,
 							"range": null,
@@ -181,7 +173,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/3/cells/889651df-34a3-46a0-87c9-f6ca235f3b49"
+					"self": "/chronograf/v1/dashboards/4/cells/ec202f55-e468-46d2-9695-f8fd9ddf7a8d"
 				}
 			}
 		],
@@ -189,9 +181,9 @@
 		"name": "CPU/Memory metrics",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/3",
-			"cells": "/chronograf/v1/dashboards/3/cells",
-			"templates": "/chronograf/v1/dashboards/3/templates"
+			"self": "/chronograf/v1/dashboards/4",
+			"cells": "/chronograf/v1/dashboards/4/cells",
+			"templates": "/chronograf/v1/dashboards/4/templates"
 		}
 	}
 }

@@ -9,10 +9,10 @@
 		}
 	},
 	"dashboard": {
-		"id": "1",
+		"id": "3",
 		"cells": [
 			{
-				"i": "b97c326c-b530-44ee-abae-b64d13998876",
+				"i": "352d797f-edf8-4cad-9d72-ca68892c7ef0",
 				"x": 5,
 				"y": 4,
 				"w": 5,
@@ -20,7 +20,7 @@
 				"name": "SWAP Memory",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used\") AS \"USED\" FROM \"telegraf\".\"autogen\".\"swap\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"used\") AS \"USED\" FROM \"telegraf\".\"autogen\".\"swap\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "swap",
@@ -39,16 +39,12 @@
 									]
 								}
 							],
-							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
-							},
+							"tags": {},
 							"groupBy": {
 								"time": "auto",
 								"tags": []
 							},
-							"areTagsAccepted": true,
+							"areTagsAccepted": false,
 							"fill": "null",
 							"rawText": null,
 							"range": null,
@@ -177,11 +173,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/1/cells/b97c326c-b530-44ee-abae-b64d13998876"
+					"self": "/chronograf/v1/dashboards/3/cells/352d797f-edf8-4cad-9d72-ca68892c7ef0"
 				}
 			},
 			{
-				"i": "351e2f57-68de-403f-a282-427132f21e79",
+				"i": "7ff02984-f426-49eb-94d7-30991be7633b",
 				"x": 0,
 				"y": 4,
 				"w": 5,
@@ -189,7 +185,7 @@
 				"name": "Memory",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used\") AS \"USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"used\") AS \"USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "mem",
@@ -208,16 +204,12 @@
 									]
 								}
 							],
-							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
-							},
+							"tags": {},
 							"groupBy": {
 								"time": "auto",
 								"tags": []
 							},
-							"areTagsAccepted": true,
+							"areTagsAccepted": false,
 							"fill": "null",
 							"rawText": null,
 							"range": null,
@@ -261,7 +253,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"cached\") AS \"CACHED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"cached\") AS \"CACHED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "mem",
@@ -280,16 +272,12 @@
 									]
 								}
 							],
-							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
-							},
+							"tags": {},
 							"groupBy": {
 								"time": "auto",
 								"tags": []
 							},
-							"areTagsAccepted": true,
+							"areTagsAccepted": false,
 							"fill": "null",
 							"rawText": null,
 							"range": null,
@@ -384,11 +372,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/1/cells/351e2f57-68de-403f-a282-427132f21e79"
+					"self": "/chronograf/v1/dashboards/3/cells/7ff02984-f426-49eb-94d7-30991be7633b"
 				}
 			},
 			{
-				"i": "c42cca96-92a3-45d5-9b35-a1c45dacf0f3",
+				"i": "919f683c-3026-492a-aa7a-99ea89ae87f3",
 				"x": 0,
 				"y": 0,
 				"w": 10,
@@ -396,7 +384,7 @@
 				"name": "% used (CPU, memory)",
 				"queries": [
 					{
-						"query": "SELECT mean(\"used_percent\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"used_percent\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"mem\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "mem",
@@ -415,16 +403,12 @@
 									]
 								}
 							],
-							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
-							},
+							"tags": {},
 							"groupBy": {
 								"time": "auto",
 								"tags": []
 							},
-							"areTagsAccepted": true,
+							"areTagsAccepted": false,
 							"fill": "null",
 							"rawText": null,
 							"range": null,
@@ -434,7 +418,7 @@
 						"type": "influxql"
 					},
 					{
-						"query": "SELECT mean(\"usage_user\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='6355b469f1ec' GROUP BY time(:interval:) FILL(null)",
+						"query": "SELECT mean(\"usage_user\") AS \"% USED\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: GROUP BY time(:interval:) FILL(null)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "cpu",
@@ -453,16 +437,12 @@
 									]
 								}
 							],
-							"tags": {
-								"host": [
-									"6355b469f1ec"
-								]
-							},
+							"tags": {},
 							"groupBy": {
 								"time": "auto",
 								"tags": []
 							},
-							"areTagsAccepted": true,
+							"areTagsAccepted": false,
 							"fill": "null",
 							"rawText": null,
 							"range": null,
@@ -557,7 +537,7 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/1/cells/c42cca96-92a3-45d5-9b35-a1c45dacf0f3"
+					"self": "/chronograf/v1/dashboards/3/cells/919f683c-3026-492a-aa7a-99ea89ae87f3"
 				}
 			}
 		],
@@ -565,9 +545,9 @@
 		"name": "CPU/Memory/Swap metrics",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/1",
-			"cells": "/chronograf/v1/dashboards/1/cells",
-			"templates": "/chronograf/v1/dashboards/1/templates"
+			"self": "/chronograf/v1/dashboards/3",
+			"cells": "/chronograf/v1/dashboards/3/cells",
+			"templates": "/chronograf/v1/dashboards/3/templates"
 		}
 	}
 }
