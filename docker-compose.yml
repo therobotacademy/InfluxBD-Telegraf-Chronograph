@@ -43,10 +43,6 @@ services:
       - influxdb
     networks:
       - tick
-    links:
-      - influxdb
-    networks:
-      - tick
 
 networks:
   tick:
