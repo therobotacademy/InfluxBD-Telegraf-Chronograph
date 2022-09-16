@@ -3,7 +3,7 @@ version: '3'
 services:
 
   telegraf:
-    image: telegraf:1.16
+    image: telegraf:1.22
     container_name: telegraf
     restart: always
     volumes:
@@ -19,7 +19,7 @@ services:
       - tick
 
   influxdb:
-    image: influxdb:1.8
+    image: influxdb:1.8.10
     container_name: influxdb
     restart: always
     volumes:
@@ -30,7 +30,7 @@ services:
       - tick
 
   chronograf:
-    image: chronograf:1.8
+    image: chronograf:1.9.4
     container_name: chronograf
     restart: always
     environment:
